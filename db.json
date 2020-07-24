@@ -1,0 +1,14 @@
+{
+  "posts": [],
+  "users": [
+    {
+      "username": "sonu",
+      "password": "$2b$08$Fd350RLGclAoybbTEGRWvuPiepBFzguFus7LuECd4Gxv3BLLP1hyy",
+      "status": "active"
+    }
+  ],
+  "authors": [
+    "user3",
+    "asd asd"
+  ]
+}

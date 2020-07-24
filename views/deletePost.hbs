@@ -1,0 +1,7 @@
+<h1>Delete Post</h1>
+
+{{#each ListofPosts}}
+<ul>
+    <li><a href="/delete/{{this}}"> {{@index}}: {{this}}</a></li>
+</ul>
+{{/each}}

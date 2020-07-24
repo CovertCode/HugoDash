@@ -1,0 +1,15 @@
+node_modules/
+public/
+static/
+content/
+cdn/
+data/
+layouts/
+resources/
+themes/
+uploads/
+trash/
+archetypes/
+snippets.md
+config.toml
+generate.sh

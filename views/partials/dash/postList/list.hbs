@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Data Table</h6>
+                <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official
+                        DataTables Documentation </a>for a full list of instructions and other options.</p>
+                <div class="table-responsive">
+                    
+                    <table id="dataTableExample" class="table">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>Name</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            {{#each ListofPosts}}
+                            <tr>
+                                <td>{{@index}}</td>
+                                <td><a href="/edit/{{this}}">{{this}}</a></td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td>2011/04/25</td>
+                                <td><a href="/delete/{{this}}">Delete Post</a></td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                        
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

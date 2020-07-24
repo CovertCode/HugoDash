@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> 'dash/head' }}
+
+<body class="sidebar-dark">
+    <div class="main-wrapper">
+
+        <!-- partial:../../partials/_sidebar.html -->
+        {{> 'dash/sidebar'}}
+        {{> 'dash/settingsSide'}}
+        <!-- partial -->
+
+        <div class="page-wrapper">
+
+            <!-- partial:../../partials/_navbar.html -->
+            {{> 'dash/navBar'}}
+            <!-- partial -->
+
+            <div class="page-content">
+
+                <nav class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">New Post</li>
+                    </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Part 1</h4>
+                                <p class="card-description">Help text</p>
+                                <form class="cmxform" id="newPostForm" method="POST">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label for="name">Title</label>
+                                            <input class="form-control" id="postTitle" type="text" name="title"
+                                                placeholder="Enter post title">
+                                        </div>
+
+                                        {{!-- List of authors from backend --}}
+                                        <div class="form-group">
+                                    <label>Author</label>
+                                    <select name="author" class="js-example-basic-single w-100">
+                                        {{#each authors}}
+                                        <option value="{{this}}">{{this}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group date datepicker" id="datePickerExample">
+                                                <input name="date" type="text" value="" id="postDate"
+                                                    class="form-control"><span class="input-group-addon"><i
+                                                        data-feather="calendar"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="confirm_password">Post URL</label>
+                                            <input id="postURL" class="form-control" type="text" name="url" placeholder="enter post url">
+                                        </div>
+                                    </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Part 2</h4>
+                                <p class="card-description">Help text</p>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select name="primarycategory" class="js-example-basic-single w-100">
+                                        <option value="India">India</option>
+                                        <option value="State">State</option>
+                                        <option value="World">World</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Lifestyle">Lifestyle</option>
+                                        <option value="Tech">Tech</option>
+                                    </select>
+                                </div>
+                                <p class="mb-2">Enter post tags separated by comma</p>
+                                <div>
+                                    <input name="tags" id="tags" />
+                                </div>
+
+                                <div class="form-group mb-0 row">
+                                    <div class="col-lg-3">
+                                        <label class="col-form-label">Meta Description</label>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <textarea id="maxlength-textarea" class="form-control" maxlength="200" rows="8"
+                                            name="metadescription"
+                                            placeholder="This textarea has a limit of 200 chars."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Part 3</h4>
+                                <p class="card-description">Help text</p>
+                                <div id="standalone-container">
+                                    <div id="toolbar-container">
+                                        <span class="ql-formats">
+                                            <select class="ql-font"></select>
+                                            <select class="ql-size"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            <button class="ql-strike"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-list" value="ordered"></button>
+                                            <button class="ql-list" value="bullet"></button>
+                                            <button class="ql-indent" value="-1"></button>
+                                            <button class="ql-indent" value="+1"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-direction" value="rtl"></button>
+                                            <select class="ql-align"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-link"></button>
+                                            <button class="ql-image"></button>
+                                            <button class="ql-video"></button>
+                                            <button class="ql-formula"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-clean"></button>
+                                        </span>
+                                    </div>
+                                    <div id="editor-container"></div>
+                                </div>
+                                <input type="hidden" id="content" name="content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Part 4</h4>
+                                <p class="card-description">Help text</p>
+                                <div id="thumb"></div>
+                                <input type="text" id="thumbnail" name="thumbnail">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Part 5</h4>
+                                <p class="card-description">Help text</p>
+                                <input class="btn btn-primary" id="save" type="submit" value="Publish Post">
+
+                                <input class="btn btn-primary" id="saveDraft" type="submit" value="Save to draft">
+                                <p id="postStatus"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- partial:../../partials/_footer.html -->
+            {{> 'dash/footer'}}
+            <!-- partial -->
+
+        </div>
+    </div>
+
+    {{> 'dash/js'}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script
+        src="//cdn.rawgit.com/jackmu95/52b82e3ec79a2e2a30ddf37e71846711/raw/6e6ee157a7d1ca7c97d81de7d61a9ee2536a7d46/quill.min.js"></script>
+    <!-- end custom js for this page -->
+    <script>
+        var IMGUR_CLIENT_ID = '792d9a8b8c24865';
+        var IMGUR_API_URL = 'https://api.imgur.com/3/image';
+
+        function imageHandler(image, callback) {
+            var data = new FormData();
+            data.append('image', image);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', IMGUR_API_URL, true);
+            xhr.setRequestHeader('Authorization', 'Client-ID ' + IMGUR_CLIENT_ID);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.status === 200 && response.success) {
+                        callback(response.data.link);
+                    } else {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            callback(e.target.result);
+                        };
+                        reader.readAsDataURL(image);
+                    }
+                }
+            }
+            xhr.send(data);
+        }
+
+        var quill2 = new Quill('#thumb', {
+            modules: {
+                toolbar: [
+                    ['image']
+                ]
+            },
+            placeholder: 'Upload featured image...',
+            theme: 'snow',
+            imageHandler: imageHandler
+        });
+
+        var quill = new Quill('#editor-container', {
+            modules: {
+                syntax: true,
+                toolbar: '#toolbar-container'
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow',
+            imageHandler: imageHandler
+        });
+
+    </script>
+
+    <script>
+
+        $("#save").click(async (e) => {
+            e.preventDefault();
+
+            var data = quill.root.innerHTML;
+            var setContent = $("#content").val(data);
+            var thumbnailURL = quill2.getContents().ops[0].insert.image;
+            var setThumbnail = $("#thumbnail").val(thumbnailURL);
+
+            var new_Date = new Date($("#postDate").val());
+            var postDate = new_Date.getFullYear() + "-" + (new_Date.getMonth() + 1) + "-" + new_Date.getDate();
+            var post_date = new_Date.toISOString().slice(0,10);
+                $("#postDate").val(post_date);
+            console.log($("#postDate").val());
+
+            var newPost = new FormData(newPostForm);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/admin/post/new', true);
+            xhr.onload = function () {
+                // do something to response
+                console.log(this.responseText);
+                alert('Successfully published')
+                $("#postStatus").text('Published')
+            };
+            xhr.send(newPost);
+
+        });
+    </script>
+
+
+</body>
+
+</html>

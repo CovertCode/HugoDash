@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Data Table</h6>
+                <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official
+                        DataTables Documentation </a>for a full list of instructions and other options.</p>
+                <div class="table-responsive">
+                    <form id="Form_NewUser" method="POST" action="/admin/setting/users/add">
+                        <input type="text" name="username" id="username">
+                        <input type="password" name="password" id="password">
+                        <button id="saveNewUser" type="submit" class="btn btn-primary btn-icon-text">
+                            <i class="btn-icon-prepend" data-feather="check-square"></i>
+                            Add New User
+                        </button>
+                    </form>
+                    <table id="dataTableExample" class="table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each Users}}
+                            <tr>
+                                <td>{{username}}</td>
+                                <td>{{status}}</td>
+                                <td>
+                                    <a href="/delete/user/{{username}}">Delete User</a>
+                                    <br>
+                                    <a href="/#{{this}}">Change password</a>
+                                    </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

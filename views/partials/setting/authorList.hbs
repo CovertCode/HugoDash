@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Data Table</h6>
+                <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official
+                        DataTables Documentation </a>for a full list of instructions and other options.</p>
+                <div class="table-responsive">
+                    <form id="Form_NewAuthor">
+                        <input type="text" name="newAuthor" id="newAuthor">
+                        <button id="saveNewAuthor" type="button" class="btn btn-primary btn-icon-text">
+                            <i class="btn-icon-prepend" data-feather="check-square"></i>
+                            Add New Author
+                        </button>
+                    </form>
+                    <table id="dataTableExample" class="table">
+                        <thead>
+                            <tr>
+                                <th>Author Name</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Age</th>
+                                <th>Joining Date</th>
+                                <th>Status</th>
+                                <th>Change Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each authors}}
+                            <tr>
+                                <td>{{this}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/admin/setting/authors/delete/{{this}}">Delete Author</a></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
